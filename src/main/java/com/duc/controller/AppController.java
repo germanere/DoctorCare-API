@@ -137,7 +137,7 @@ public class AppController {
 	@GetMapping("/admin/schedules/patient/{id}")
 	public ResponseEntity<String> detailschedulesPatient(@PathVariable int id){
 		try {
-				patientService.getPatient(id);
+			patientService.getPatient(id);
 			return ResponseEntity.ok("");
 		} catch (Exception e) {
 			e.printStackTrace();
