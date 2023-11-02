@@ -23,6 +23,9 @@ public class PatientService {
 	public List<Patient> getPatients(){
 		return patientRepository.findAll();
 	}
+	public Optional<Patient> getPatient(int id) {
+		return patientRepository.findById(id);
+	}
 
 	public void lockAccount(int id) {
 		try {

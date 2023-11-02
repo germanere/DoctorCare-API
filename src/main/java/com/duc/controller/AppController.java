@@ -133,4 +133,15 @@ public class AppController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred.");
 		}
 	}
+	
+	@GetMapping("/admin/schedules/patient/{id}")
+	public ResponseEntity<String> detailschedulesPatient(@PathVariable int id){
+		try {
+				patientService.getPatient(id);
+			return ResponseEntity.ok("");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 }
