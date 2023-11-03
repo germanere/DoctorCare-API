@@ -12,6 +12,8 @@ import com.duc.entity.Patient;
 import com.duc.exception.PatientNotFoundException;
 import com.duc.repository.PatientRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 @Component("patientservice")
 @ComponentScan(basePackages = {"com.duc.service"})
@@ -20,13 +22,17 @@ public class PatientService {
 	@Autowired
 	private PatientRepository patientRepository;
 	
+	@Transactional
 	public List<Patient> getPatients(){
 		return patientRepository.findAll();
 	}
+	
+	@Transactional
 	public Optional<Patient> getPatient(int id) {
 		return patientRepository.findById(id);
 	}
-
+	
+	@Transactional
 	public void lockAccount(int id) {
 		try {
 	        Optional<Patient> optionalPatient = patientRepository.findById(id);

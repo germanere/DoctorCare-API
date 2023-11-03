@@ -135,13 +135,14 @@ public class AppController {
 	}
 	
 	@GetMapping("/admin/schedules/patient/{id}")
-	public ResponseEntity<String> detailschedulesPatient(@PathVariable int id){
-		try {
-			patientService.getPatient(id);
-			return ResponseEntity.ok("");
-		} catch (Exception e) {
-			e.printStackTrace();
+	public Optional<Patient> detailschedulesPatient(@PathVariable int id){
+
+		Optional<Patient> patient = patientService.getPatient(id);
+		
+		if(patient.isPresent()) {
+			patient.get().getName();
+			patient.get().getUsers().getSchedules();
 		}
-		return null;
+		return patient;
 	}
 }
