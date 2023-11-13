@@ -27,7 +27,7 @@ public class AuthFilter implements Filter {
 		String requestURI = httpServletRequest.getRequestURI();
 		String method = httpServletRequest.getMethod();
 		String token = httpServletRequest.getHeader("Authorization");
-		if (requestURI.contains("/login")||requestURI.contains("/register")) {
+		if (requestURI.contains("/login")||requestURI.contains("/forgot-password")||requestURI.contains("/reset-password")||requestURI.contains("/register")) {
 			chain.doFilter(request, response);
 			}
 		else {
