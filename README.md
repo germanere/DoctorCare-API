@@ -10,6 +10,8 @@ The project utilizes the following technologies:
 
 ## Functional Description
 
+## Demo Link : https://doctorcare-api.onrender.com/
+
 ### For User,Patient:
 - Register, log in, and log out of the system
 - Forgot password
