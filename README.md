@@ -8,9 +8,9 @@ The project utilizes the following technologies:
 - Framework: Spring MVC
 - Database: MySQL
 
-## Functional Description
-
 ## Demo Link : https://doctorcare-api.onrender.com/
+
+## Functional Description
 
 ### For User,Patient:
 - Register, log in, and log out of the system
