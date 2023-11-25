@@ -8,6 +8,8 @@ The project utilizes the following technologies:
 - Framework: Spring MVC
 - Database: MySQL
 
+## Demo Link : https://doctorcare-api.onrender.com/
+
 ## Functional Description
 
 ### For User,Patient:
@@ -28,8 +30,8 @@ The project utilizes the following technologies:
 - Lock/unlock the doctor's account
 
 ### For Admin:
--Lock/unlock the patient's account
--Add doctor's account
+- Lock/unlock the patient's account
+- Add doctor's account
 
 ## Deployment Instructions
 To deploy the project on your local machine, follow these steps:
