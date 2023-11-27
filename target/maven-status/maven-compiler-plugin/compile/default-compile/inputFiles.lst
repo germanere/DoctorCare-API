@@ -45,6 +45,7 @@ C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\dto\addScheldulesDto.
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\config\SecurityConfiguration.java
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\dto\ForgotPasswordDto.java
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\entity\UserPrincipal.java
+C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\dto\PatientDetailDto.java
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\dto\SearchResultDto.java
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\entity\Schedule.java
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\service\DoctoruserService.java

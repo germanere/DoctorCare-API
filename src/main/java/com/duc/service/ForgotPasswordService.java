@@ -19,6 +19,7 @@ public class ForgotPasswordService {
 	
 	@Autowired
 	private UserRepository userRepository;
+
 	@Autowired
     private JavaMailSender mailSender;
     
@@ -30,7 +31,7 @@ public class ForgotPasswordService {
         String verificationCode = generateVerificationCode();
 
         String subject = "Xác nhận email";
-        String text = "Mã xác thực của bạn là: " + verificationCode;
+        String text ="https://doctorcare-api.onrender.com/api/users/reset-password" +verificationCode;
         sendEmail(email, subject, text);
     }
     
@@ -45,6 +46,7 @@ public class ForgotPasswordService {
         user.setPassword(newPassword);
         userRepository.save(user);
     }
+    
     
     private void sendEmail(String email, String subject, String text) {
         SimpleMailMessage message = new SimpleMailMessage();

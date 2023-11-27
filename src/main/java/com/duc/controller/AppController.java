@@ -7,29 +7,43 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.duc.dto.ClinicsDto;
 import com.duc.dto.PatientDTO;
+import com.duc.dto.PatientDetailDto;
 import com.duc.dto.SpecializationDto;
 import com.duc.entity.Clinic;
 import com.duc.entity.Patient;
 import com.duc.entity.Schedule;
 import com.duc.entity.Specialization;
+import com.duc.entity.User;
 import com.duc.exception.PatientNotFoundException;
+import com.duc.repository.PatientRepository;
 import com.duc.repository.ScheduleReposiroty;
 import com.duc.service.ClinicService;
 import com.duc.service.DoctoruserService;
 import com.duc.service.PatientService;
 import com.duc.service.SpecialiazationService;
+import com.duc.service.UserService;
+
+import jakarta.mail.MessagingException;
 
 @RestController
 @RequestMapping("/api")
 public class AppController {
+    @Autowired
+    private JavaMailSender javaMailSender;
+    
+	@Autowired
+	private UserService userService;
+	
 	@Autowired
 	private ScheduleReposiroty scheduleReposiroty;
 	
@@ -44,6 +58,9 @@ public class AppController {
 	
 	@Autowired
 	private SpecialiazationService specialiazationService;
+	
+	@Autowired
+	private PatientRepository patientRepository;
 	
 	@GetMapping
 	public String sayHello() {
@@ -98,6 +115,7 @@ public class AppController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred.");
         }
     }
+	
 	@PostMapping("/admin/doctor/{id}/unlockorlock")
 	public ResponseEntity<String> lockDoctorAccount(@PathVariable int id) {
         try {
@@ -135,14 +153,31 @@ public class AppController {
 	}
 	
 	@GetMapping("/admin/schedules/patient/{id}")
-	public Optional<Patient> detailschedulesPatient(@PathVariable int id){
-
-		Optional<Patient> patient = patientService.getPatient(id);
+	public PatientDetailDto detailschedulesPatient(@PathVariable int id){
+		Patient patient = patientRepository.getOne(id);
 		
-		if(patient.isPresent()) {
-			patient.get().getName();
-			patient.get().getUsers().getSchedules();
+		PatientDetailDto patientDetailDto = new PatientDetailDto();
+		if(patient==null) {
+			ResponseEntity.notFound().build();
 		}
-		return patient;
+		patientDetailDto.setName(patient.getName());
+		patientDetailDto.setBenhly(patient.getPathologydetail());
+		User user =userService.FindUserById(patient.getUsers().getId());
+		Schedule schedule = scheduleReposiroty.getById(user.getId());
+		patientDetailDto.setDate(schedule.getDate());
+		patientDetailDto.setTime(schedule.getTime());
+		patientDetailDto.setDescript(schedule.getDescript());
+		patientDetailDto.setNameDoctor(schedule.getUsers().getDoctorUser().getName());
+		return patientDetailDto;
+	}
+	
+	@PostMapping("/sendEmailtoPatient/patient/{id}")
+    public void sendEmail(@RequestBody Patient patientData,@PathVariable int id) {
+        String recipientEmail = patientData.getUsers().getEmail(); // Địa chỉ email người nhận
+        String subject = "Thông tin khám chữa bệnh"; // Tiêu đề email
+        String body = "Xin chào,\n\nDưới đây là thông tin khám chữa bệnh của bệnh nhân.\n\nTrân trọng,"; // Nội dung email
+        String attachmentPath = "path/to/Thông tin bệnh lý.pdf"; // Đường dẫn tệp tin đính kèm PDF
+
+        
 	}
 }
