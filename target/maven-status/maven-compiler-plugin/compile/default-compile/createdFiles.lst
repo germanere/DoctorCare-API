@@ -12,6 +12,7 @@ com\duc\dto\UserinfoDto.class
 com\duc\entity\Specialization.class
 com\duc\service\DoctoruserService.class
 com\duc\service\SchelduleService.class
+com\duc\service\MedicalReportRequest.class
 com\duc\repository\DoctorUserRepository.class
 com\duc\service\roleService.class
 com\duc\dto\PatientDTO.class
@@ -44,6 +45,7 @@ com\duc\dto\addScheldulesDto.class
 com\duc\filter\AuthFilter.class
 com\duc\dto\SearchDocterDto.class
 com\duc\dto\SearchResultDto.class
+com\duc\service\EmailService.class
 com\duc\dto\PatientDetailDto.class
 com\duc\service\ForgotPasswordService.class
 com\duc\entity\Patient.class

@@ -42,9 +42,11 @@ C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\controller\UserContro
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\repository\DoctorUserRepository.java
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\dto\UserDto.java
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\dto\addScheldulesDto.java
+C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\service\EmailService.java
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\config\SecurityConfiguration.java
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\dto\ForgotPasswordDto.java
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\entity\UserPrincipal.java
+C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\service\MedicalReportRequest.java
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\dto\PatientDetailDto.java
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\dto\SearchResultDto.java
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\entity\Schedule.java

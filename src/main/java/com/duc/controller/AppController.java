@@ -1,13 +1,12 @@
 package com.duc.controller;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -29,6 +28,8 @@ import com.duc.repository.PatientRepository;
 import com.duc.repository.ScheduleReposiroty;
 import com.duc.service.ClinicService;
 import com.duc.service.DoctoruserService;
+import com.duc.service.EmailService;
+import com.duc.service.MedicalReportRequest;
 import com.duc.service.PatientService;
 import com.duc.service.SpecialiazationService;
 import com.duc.service.UserService;
@@ -38,8 +39,8 @@ import jakarta.mail.MessagingException;
 @RestController
 @RequestMapping("/api")
 public class AppController {
-    @Autowired
-    private JavaMailSender javaMailSender;
+	@Autowired
+	private EmailService emailService;
     
 	@Autowired
 	private UserService userService;
@@ -171,13 +172,15 @@ public class AppController {
 		return patientDetailDto;
 	}
 	
-	@PostMapping("/sendEmailtoPatient/patient/{id}")
-    public void sendEmail(@RequestBody Patient patientData,@PathVariable int id) {
-        String recipientEmail = patientData.getUsers().getEmail(); // Địa chỉ email người nhận
-        String subject = "Thông tin khám chữa bệnh"; // Tiêu đề email
-        String body = "Xin chào,\n\nDưới đây là thông tin khám chữa bệnh của bệnh nhân.\n\nTrân trọng,"; // Nội dung email
-        String attachmentPath = "path/to/Thông tin bệnh lý.pdf"; // Đường dẫn tệp tin đính kèm PDF
-
-        
-	}
+	@PostMapping("/doctor/sendEmailtoPatient/patient/{id}")
+	 public String sendMedicalReport(@RequestBody MedicalReportRequest request,@PathVariable int id) throws MessagingException, javax.mail.MessagingException {
+		Patient patient1 = patientRepository.findById(id).orElse(null);
+        String recipientEmail = request.getRecipientEmail();
+        try {
+            emailService.sendMedicalReportEmail(recipientEmail, patient1);
+            return "Email sent successfully.";
+        } catch (IOException e) {
+            return "Failed to send email: " + e.getMessage();
+        }
+    }
 }
