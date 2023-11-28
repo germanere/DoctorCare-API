@@ -5,23 +5,17 @@ import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDType0Font;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.apache.pdfbox.pdmodel.PDPageContentStream;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
-import org.springframework.util.ResourceUtils;
-
 import com.duc.entity.Patient;
 import com.duc.entity.Schedule;
 import com.duc.entity.User;
 import com.duc.repository.ScheduleReposiroty;
-
 import jakarta.mail.util.ByteArrayDataSource;
-
-import javax.activation.DataSource;
 import javax.mail.MessagingException;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
