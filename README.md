@@ -26,6 +26,7 @@ The project utilizes the following technologies:
 - Display patient list
 - Receive/cancel patient's examination schedule
 - Lock/unlock the doctor's account
+- Send email to patient attachment pdf file
 
 ### For Admin:
 -Lock/unlock the patient's account
