@@ -26,6 +26,7 @@ import javax.mail.MessagingException;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 
 @Service
 public class EmailService {
@@ -54,8 +55,8 @@ public class EmailService {
 	        document.addPage(page);
 
 	        PDPageContentStream contentStream = new PDPageContentStream(document, page);
-	        File fontFile = ResourceUtils.getFile("classpath:arial-unicode-ms.ttf");
-	        PDFont font = PDType0Font.load(document, fontFile);
+	        InputStream fontStream = getClass().getClassLoader().getResourceAsStream("arial-unicode-ms.ttf");
+	        PDFont font = PDType0Font.load(document, fontStream);
 	        contentStream.setFont(font, 12);
 	        contentStream.beginText();
 	        contentStream.newLineAtOffset(25, 700);
