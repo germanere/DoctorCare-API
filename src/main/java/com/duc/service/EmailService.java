@@ -54,7 +54,7 @@ public class EmailService {
 	        document.addPage(page);
 
 	        PDPageContentStream contentStream = new PDPageContentStream(document, page);
-	        File fontFile = ResourceUtils.getFile("classpath:arial-unicode-ms.ttf");
+		InputStream fontStream = getClass().getClassLoader().getResourceAsStream("arial-unicode-ms.ttf");
 	        PDFont font = PDType0Font.load(document, fontFile);
 	        contentStream.setFont(font, 12);
 	        contentStream.beginText();
