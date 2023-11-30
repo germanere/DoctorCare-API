@@ -31,6 +31,7 @@ The project utilizes the following technologies:
 ### For Admin:
 -Lock/unlock the patient's account
 -Add doctor's account
+-Using all feature of roles doctor and patient
 
 ## Deployment Instructions
 To deploy the project on your local machine, follow these steps:
