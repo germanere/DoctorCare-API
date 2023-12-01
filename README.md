@@ -12,7 +12,7 @@ The project utilizes the following technologies:
 
 ## Functional Description
 
-### For User,Patient:
+## For User,Patient:
 - Register, log in, and log out of the system
 - Forgot password
 - Display information of prominent specialties
@@ -22,7 +22,7 @@ The project utilizes the following technologies:
 - Search by doctor's specialty
 - Make an appointment
 
-### For Doctors:
+## For Doctors:
 - Register, log in, and log out of the system
 - Forgot password
 - Display patient list
