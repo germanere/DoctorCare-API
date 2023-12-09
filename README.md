@@ -8,7 +8,7 @@ The project utilizes the following technologies:
 - Framework: Spring MVC
 - Database: MySQL
 
-## Demo Link : https://doctorcare-api.onrender.com/
+## Demo Link : [https://doctorcare-api.onrender.com/](https://doctorcare-api.onrender.com/swagger-ui/index.html)
 
 ## Functional Description
 
