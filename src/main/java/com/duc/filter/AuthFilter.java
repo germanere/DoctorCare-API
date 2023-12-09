@@ -27,7 +27,8 @@ public class AuthFilter implements Filter {
 		String requestURI = httpServletRequest.getRequestURI();
 		String method = httpServletRequest.getMethod();
 		String token = httpServletRequest.getHeader("Authorization");
-		if (requestURI.contains("/login")||requestURI.contains("/forgot-password")||requestURI.contains("/reset-password")||requestURI.contains("/register")) {
+		System.out.println("URI: " + requestURI);		
+		if (requestURI.contains("/login")||requestURI.contains("/forgot-password")||requestURI.contains("/reset-password")||requestURI.contains("/register")||requestURI.contains("/swagger-ui")||requestURI.contains("/api-docs")) {
 			chain.doFilter(request, response);
 			}
 		else {
@@ -39,6 +40,8 @@ public class AuthFilter implements Filter {
 		}
 		chain.doFilter(request, response);
 	}
+	private static final String[] AUTH_WHITELIST = {"/api/v1/auth/**","/v3/api-docs/**","/v3/api-docs.yaml","/swagger-ui/**","/swagger-ui.html"	
+	};
 	
 
 }

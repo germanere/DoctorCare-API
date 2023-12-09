@@ -23,6 +23,7 @@ C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\entity\Specialization
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\repository\UserRepository.java
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\exception\UserNotFoundException.java
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\entity\Post.java
+C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\config\SpringFoxConfig.java
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\filter\AuthFilter.java
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\repository\PostRepository.java
 C:\Users\Admin\eclipse-workspace\duc\src\main\java\com\duc\entity\Role.java
