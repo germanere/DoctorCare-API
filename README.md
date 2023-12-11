@@ -41,4 +41,4 @@ To deploy the project on your local machine, follow these steps:
 - Step 3: Install Apache Tomcat or a similar web server to deploy the Spring MVC application.
 - Step 4: Configure the database connection by modifying the information in the "jpaconfig.java" file to match your configuration.
 - Step 5: Run the application on the server (preferably Tomcat 9).
-- Step 6: Using postman to get API
+- Step 6: add /swagger-ui/index.html to use swagger and type v3/api-docs
