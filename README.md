@@ -5,7 +5,7 @@ The demand for businesses to find suitable candidates for jobs and for individua
 
 The project utilizes the following technologies:
 - Programming language: Java
-- Framework: Spring MVC
+- Framework: Spring MVC+ Spring Rest Api +Spring Data JPA+ 
 - Database: MySQL
 
 ## Functional Description
