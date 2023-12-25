@@ -12,7 +12,7 @@ The project utilizes the following technologies:
 
 ## Functional Description
 
-## For User,Patient:
+## For Patient:
 - Register, log in, and log out of the system
 - Forgot password
 - Display information of prominent specialties
