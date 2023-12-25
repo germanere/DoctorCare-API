@@ -8,7 +8,7 @@ The project utilizes the following technologies:
 - Framework: Spring MVC
 - Database: MySQL
 
-## Demo Link : [https://doctorcare-api.onrender.com/](https://doctorcare-api.onrender.com/swagger-ui/index.html)
+## Demo Link : https://doctor-care-mfve.onrender.com/swagger-ui/index.html
 
 ## Functional Description
 
@@ -34,6 +34,7 @@ The project utilizes the following technologies:
 - Lock/unlock the patient's account
 - Add doctor's account
 - See Detail Schedule patient
+- Use All Function of system
 
 ## Deployment Instructions
 To deploy the project on your local machine, follow these steps:
