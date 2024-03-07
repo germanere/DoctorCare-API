@@ -5,14 +5,14 @@ The demand for businesses to find suitable candidates for jobs and for individua
 
 The project utilizes the following technologies:
 - Programming language: Java
-- Framework: Spring MVC
+- Framework: Spring MVC + Spring Data JPA +Spring security
 - Database: MySQL
 
 ## Demo Link : https://doctor-care-mfve.onrender.com/swagger-ui/index.html
 
 ## Functional Description
 
-## For User,Patient:
+## For Patient:
 - Register, log in, and log out of the system
 - Forgot password
 - Display information of prominent specialties
@@ -44,4 +44,4 @@ To deploy the project on your local machine, follow these steps:
 - Step 3: Install Apache Tomcat or a similar web server to deploy the Spring MVC application.
 - Step 4: Configure the database connection by modifying the information in the properties.appliance file to match your configuration.
 - Step 5: Run the application on the server (preferably Tomcat 9).
-- Step 6: Using postman to get API
+- Step 6: Using postman to get API.
